@@ -114,7 +114,7 @@ public class CurrentRunFragment extends Fragment implements OnMapReadyCallback, 
                     } else if (startButton.getText().equals("save")) {
                         showNameAlertDialog();
                         startButton.setText("start");
-                        locations.clear();
+
 
                     } else {
                         stopRoute();
@@ -167,10 +167,10 @@ public class CurrentRunFragment extends Fragment implements OnMapReadyCallback, 
         long s = TimeUnit.MILLISECONDS.toSeconds(dTime) - hh *60 * 60 - mn * 60 ;
         time = hh+"h:" + mn +"m:" + s + "s";
         timeSpeed = (int) dTime / 1000;
-        setTextViews();
         fetchLocation();
         locations.add(currentLocation);
         getDistance();
+        setTextViews();
     }
 
 
@@ -182,11 +182,11 @@ public class CurrentRunFragment extends Fragment implements OnMapReadyCallback, 
 
 
     private void getDistance() {
-        float result = 0;
         double startLat = locations.get(0).getLatitude();
         double startLong = locations.get(0).getLongitude();
         double endLat = locations.get(1).getLatitude();
         double endLong = locations.get(1).getLongitude();
+        float result = 0;
         Location.distanceBetween(startLat, startLong, endLat, endLong, new float[]{result});
         draw(locations);
         distance = distance + result;
@@ -313,7 +313,6 @@ public class CurrentRunFragment extends Fragment implements OnMapReadyCallback, 
         builder.setTitle(getString(R.string.name_dialog));
         final EditText editText = new EditText(getContext());
         editText.setInputType(InputType.TYPE_CLASS_TEXT);
-        editText.setMinWidth(30);
         builder.setView(editText);
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -331,6 +330,7 @@ public class CurrentRunFragment extends Fragment implements OnMapReadyCallback, 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MMM dd");
         Date date = new Date();
         mPresenter.save(new Route(routeName, time, distance, speed, formatter.format(date)));
+        locations.clear();
 
     }
 

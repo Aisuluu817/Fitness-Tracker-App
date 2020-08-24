@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import com.example.fitness_tracker_app.R;
 
-public class HistoryRunFragment extends Fragment implements HistoryContract.View{
+public class HistoryRunFragment extends Fragment implements HistoryContract.View {
     HistoryContract.Presenter mPresenter;
     RecyclerView recyclerView;
     TextView emptyState;
@@ -44,13 +44,13 @@ public class HistoryRunFragment extends Fragment implements HistoryContract.View
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.delete_menu:
                 showDeleteConfirmationDialog();
                 return true;
         }
 
-       return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
 
@@ -81,7 +81,7 @@ public class HistoryRunFragment extends Fragment implements HistoryContract.View
         recyclerView = view.findViewById(R.id.recycler_view);
         emptyState = view.findViewById(R.id.history_empty_state);
         setView();
-       return view;
+        return view;
     }
 
     @Override

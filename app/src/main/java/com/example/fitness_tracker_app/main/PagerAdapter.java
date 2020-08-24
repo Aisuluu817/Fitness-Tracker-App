@@ -1,4 +1,4 @@
-package com.example.fitness_tracker_app;
+package com.example.fitness_tracker_app.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,12 +18,11 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-       if (position == 0){
-           return  new CurrentRunFragment();
-       }
-       else{
-           return new HistoryRunFragment();
-       }
+        if (position == 0) {
+            return new CurrentRunFragment();
+        } else {
+            return new HistoryRunFragment();
+        }
     }
 
     @Override

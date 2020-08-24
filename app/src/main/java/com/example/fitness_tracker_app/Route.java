@@ -5,10 +5,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.io.Serializable;
 
-@Entity(tableName ="route_info")
-public class Route implements Serializable {
+@Entity(tableName = "route_info")
+public class Route {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "_id")
     private int id;
@@ -23,7 +22,7 @@ public class Route implements Serializable {
     private String date;
 
 
-    public Route(@NonNull String routeName,@NonNull String time, double distance, @NonNull double speed, String date) {
+    public Route(@NonNull String routeName, @NonNull String time, double distance, @NonNull double speed, String date) {
         this.routeName = routeName;
         this.time = time;
         this.distance = distance;

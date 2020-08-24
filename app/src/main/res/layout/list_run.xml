@@ -10,21 +10,19 @@
         android:id="@+id/history_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:fontFamily="sans-serif-medium"
-        android:textColor="#536DFE"
         android:layout_margin="10dp"
-        tools:text="Route name" />
+        android:fontFamily="sans-serif-medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#536DFE" />
 
     <TextView
         android:id="@+id/history_distance_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/history_name_text_view"
         android:layout_margin="10dp"
         android:layout_marginTop="0dp"
         android:fontFamily="sans-serif"
-        android:layout_below="@id/history_name_text_view"
-        android:text="550"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#000000" />
 
@@ -43,13 +41,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/history_distance_text_view"
+        android:layout_margin="10dp"
+        android:layout_marginTop="0dp"
         android:layout_toRightOf="@id/history_time_image_view"
         android:fontFamily="sans-serif-light"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#000000"
         android:text="time spent"
-        android:layout_margin="10dp"
-        android:layout_marginTop="0dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/history_date_text_view"
@@ -57,9 +55,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        tools:text="date"
         android:layout_margin="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        tools:text="date" />
 
 
 </RelativeLayout>

@@ -18,9 +18,9 @@ public class CurrentPresenter implements CurrentContract.Presenter {
         this.view = view;
         routeDao =  RouteDatabase.getInstance(application).routeDao();
     }
+
     @Override
     public void save(Route route) {
-
         new SaveRouteAsyncTask(routeDao).execute(route);
     }
 

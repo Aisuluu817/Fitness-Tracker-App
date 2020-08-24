@@ -1,4 +1,4 @@
-package com.example.fitness_tracker_app;
+package com.example.fitness_tracker_app.main;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -7,22 +7,21 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.fitness_tracker_app.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     BottomNavigationView bottomNav;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-//        if (savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                    new CurrentRunFragment()).commit();
-//        }
-       viewPager =  findViewById(R.id.view_pager);
+
+        viewPager = findViewById(R.id.view_pager);
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -52,12 +51,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-            private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                   // Fragment selectedFragment = null;
-                    switch(menuItem.getItemId()){
+                    switch (menuItem.getItemId()) {
                         case R.id.nav_run:
                             viewPager.setCurrentItem(0);
                             break;
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
-                    return  true;
+                    return true;
                 }
             };
 

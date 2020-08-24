@@ -10,19 +10,19 @@
     <Chronometer
         android:id="@+id/time_current_run"
         android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
         android:textSize="30sp" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:id="@+id/attributes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/time_current_run"
         android:layout_margin="10dp"
-        android:layout_below="@id/time_current_run">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/current_distance"
@@ -47,21 +47,21 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/map_view"
-        android:layout_above="@id/start_button"
-        android:layout_below="@id/attributes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/start_button"
+        android:layout_below="@id/attributes" />
 
     <Button
         android:id="@+id/start_button"
-        android:text="start"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/start_button_circle"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/start_button_circle"
+        android:text="start"
+        android:textColor="@color/colorPrimaryDark" />
 
 
 </RelativeLayout>
