@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Fitness-Tracker-App</string>
+    <string name="map_key" translatable="false">AIzaSyASAieClGGt-x6Fp7hT7s9ioO4K11KCis8</string>
+    <string name="name_dialog">Give a name to your route before saving</string>
+    <string name="delete_all">Delete all</string>
+    <string name="delete_dialog">Delete history routes?</string>
+    <string name="cancel">Cancel</string>
+    <string name="history">History</string>
+    <string name="location_permission">Permission required</string>
+    <string name="gps_network_not_enabled">GPS network is not enabled</string>
+    <string name="open_location_settings">Open location settings</string>
+    <string name="internet">No internet connection</string>
+</resources>
