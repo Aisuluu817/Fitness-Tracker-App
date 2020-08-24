@@ -104,18 +104,17 @@ public class CurrentRunFragment extends Fragment implements OnMapReadyCallback, 
                 @Override
                 public void onClick(View view) {
                     if (startButton.getText().equals("start")) {
-                        if (locations != null) {
-                            locations.clear();
-                        }
                         if (permissionGranted && gps_enabled) {
                             startRoute();
-                        } else {
+                        }
+                        else {
                             permissionRequest();
                             gpsNetworkCheck();
                         }
                     } else if (startButton.getText().equals("save")) {
                         showNameAlertDialog();
                         startButton.setText("start");
+                        locations.clear();
 
                     } else {
                         stopRoute();
@@ -216,7 +215,7 @@ public class CurrentRunFragment extends Fragment implements OnMapReadyCallback, 
         polygonOptions.fillColor(Color.BLUE);
         polygonOptions.strokeWidth(8);
 
-      
+
         for (int i = 0; i < length; i++ ){
             polygonOptions.add(new LatLng(locations.get(i).getLatitude(), locations.get(i).getLongitude()));
         }
@@ -230,19 +229,19 @@ public class CurrentRunFragment extends Fragment implements OnMapReadyCallback, 
                 && ActivityCompat.checkSelfPermission(getContext(),
                 Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             task = fusedLocationProviderClient.getLastLocation();
-            Log.e(LOG_TAG, "permissionRequest if  the ifrst one");
+
             permissionGranted = true;
             fetchLocation();
         }
         else {
             if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)) {
-                Log.e(LOG_TAG, "permissionRequest if  the second one");
+
                 showPermissionAlertDialog();
             }
             else {
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
-                Log.e(LOG_TAG, "permissionRequest if  the last  one");
+
             }
         }
     }
@@ -283,7 +282,6 @@ public class CurrentRunFragment extends Fragment implements OnMapReadyCallback, 
             if (location != null) {
                 currentLocation = location;
                 mapView.getMapAsync(CurrentRunFragment.this);
-                Log.e(LOG_TAG, "fetchLocation()");
             }
         }
     });

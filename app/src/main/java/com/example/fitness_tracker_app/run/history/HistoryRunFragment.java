@@ -93,7 +93,6 @@ public class HistoryRunFragment extends Fragment implements HistoryContract.View
     @Override
     public void onResume() {
         super.onResume();
-        Log.e("History", "OnResume");
         setView();
     }
 
